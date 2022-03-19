@@ -1,0 +1,25 @@
+name: Cache with Composite
+
+on:
+  workflow_dispatch: {}
+
+jobs:
+  job-1:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ./.github/utils/prep
+
+  job-2:
+    needs: [job-1]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ./.github/utils/prep
+
+      - name: ">>> Confirm dependencies restored"
+        run: |
+          ls -lah
+          cd dependencies
+          ls -lah
+          cat module.txt

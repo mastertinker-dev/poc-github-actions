@@ -1,0 +1,22 @@
+name: Simple Triggers
+
+on:
+  workflow_dispatch: {}
+  # push:
+  #   branches: main
+  # schedule:
+  #   - cron: '0 12 * * 1-5'
+
+jobs:
+  job-1:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Before
+        run: cat state.txt
+
+      - name: Change state
+        run: echo "a change" >> state.txt
+
+      - name: ">>> New State"
+        run: cat state.txt

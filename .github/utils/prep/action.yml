@@ -1,0 +1,13 @@
+runs:
+  using: "composite"
+  steps:
+    - name: Cache dependencies
+      id: cache
+      uses: ./.github/utils/cache
+
+    - name: Install dependencies
+      if: steps.cache.outputs.cache-hit != 'true'
+      shell: bash
+      run: |
+        mkdir -p dependencies
+        echo 'some module installed' > dependencies/module.txt

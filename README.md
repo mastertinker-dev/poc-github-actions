@@ -39,5 +39,6 @@ The workflow will use the `prep` composite action, which in its turn uses `cache
     1. Consequent jobs (`job-1` in this case) will be able to benefit from those cached dependencies.
 
 
-## 6. On PR Trigger `workflow_call` from this repo and from another repo
-TODO
+## 6. Trigger `workflow_call` from this repo and from another repo
+
+`Caller` workflow can be triggered both manually and through a PR. It has 2 steps -- one internally and one from another repo. Checking the status demonstrates which repo's data it is running on.

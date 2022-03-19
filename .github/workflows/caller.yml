@@ -1,0 +1,9 @@
+name: Caller
+
+on:
+  workflow_dispatch: {}
+
+
+jobs:
+  internal:
+    uses: makar2/poc-github-actions/.github/workflows/_call-recipient-1.yml@main

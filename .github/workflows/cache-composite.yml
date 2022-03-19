@@ -2,6 +2,8 @@ name: Cache with Composite
 
 on:
   workflow_dispatch: {}
+  pull_request:
+    branches: main
 
 jobs:
   job-1:

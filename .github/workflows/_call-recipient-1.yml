@@ -1,0 +1,12 @@
+name: Call recipient 1
+on:
+  workflow_call:
+
+jobs:
+  run-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: ">>> Confirm correct status"
+        run: cat state.txt
